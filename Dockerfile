@@ -4,4 +4,4 @@ RUN cd /src && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix 
 
 FROM scratch
 COPY --from=buildenv /src/barryallen /opt/barryallen
-ENTRYPOINT /opt/barryallen
+ENTRYPOINT ["/opt/barryallen"]
